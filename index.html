@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>한국 전통문양</title>
+    <script
+      src="https://kit.fontawesome.com/0ed7484e2c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <header id="header">
+      <div class="headerBg">
+        <div class="app-header">
+          <i class="fas fa-bars"></i>
+          <h1 class="patternTitle">전통문양 디자인</h1>
+          <i class="fas fa-search"></i>
+        </div>
+
+        <div class="searchBox">
+          <input
+            class="searchInput"
+            type="text"
+            placeholder="문양코드나 문양명"
+          />
+          <input class="searchBtn" type="submit" value="검색" />
+        </div>
+
+        <div class="categories">
+          <div class="category-All">
+            <h3 class="title">전체</h3>
+            <span class="totalCountAll">-</span>
+          </div>
+          <div class="category-2d active">
+            <h3 class="title">2D문양</h3>
+            <span class="totalCount2D">-</span>
+          </div>
+          <div class="category-3d">
+            <h3 class="title">3D문양</h3>
+            <span class="totalCount3D">-</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav id="navi">
+      <div class="patterns">
+        <div class="pattern active">전체</div>
+        <div class="pattern">인물문</div>
+        <div class="pattern">동물문</div>
+        <div class="pattern">식물문</div>
+        <div class="pattern">인공물문</div>
+        <div class="pattern">자연산수문</div>
+        <div class="pattern">문자문</div>
+        <div class="pattern">기하문</div>
+        <div class="pattern">복합문</div>
+        <div class="pattern">기타문</div>
+      </div>
+    </nav>
+
+    <div id="container">
+      <ul class="items"></ul>
+      <div class="moreBtn">더보기</div>
+    </div>
+
+    <div id="itemInfo">
+      <div class="itemInfo__container">
+        <i class="fas fa-arrow-left backBtn"></i>
+        <section class="itemInfo__sec1">
+          <div class="patternDetail"></div>
+        </section>
+      </div>
+      <section class="itemInfo__sec2">
+        <div><h4>문양설명</h4></div>
+        <p class="discription"></p>
+      </section>
+    </div>
+
+    <button class="scrollUp">UP</button>
+  </body>
+</html>
