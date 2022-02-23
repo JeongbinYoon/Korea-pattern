@@ -64,3 +64,55 @@ function itemList(data) {
 
 patternData(url2D, "html", shapeRealm);
 patternData(url3D, "html", shapeRealm);
+
+//  카테고리 클릭
+$(".category-2d").on("click", function () {
+  $(".category-3d").removeClass("active");
+  $(".category-2d").addClass("active");
+  patternData(url2D, "html", shapeRealm);
+});
+$(".category-3d").on("click", function () {
+  patternData(url3D, "html", shapeRealm);
+  $(".category-2d").removeClass("active");
+  $(".category-3d").addClass("active");
+});
+
+//검색
+$(".searchBtn").on("click", function () {
+  const searchValue = $(".searchInput").val();
+  shapeRealm = searchValue;
+  patternData(url2D, "html", shapeRealm);
+});
+
+// 패턴 타입 클릭
+$(".pattern").on("click", function () {
+  console.log($(this).text());
+  $(this).parent().find(".active").removeClass("active");
+  $(this).addClass("active");
+
+  shapeRealm = $(this).text();
+  if ($(this).text() == "전체") {
+    shapeRealm = "";
+  }
+  console.log(shapeRealm);
+
+  if ($(".category-2d").hasClass("active")) {
+    patternData(url2D, "html", shapeRealm);
+  } else if ($(".category-3d").hasClass("active")) {
+    patternData(url3D, "html", shapeRealm);
+  }
+
+  console.log(url2D);
+});
+
+// 더보기 버튼 클릭
+$(".moreBtn").on("click", function () {
+  page += 1;
+  console.log(page);
+  if ($(".category-2d").hasClass("active")) {
+    console.log(url2D);
+    patternData(url2D, "append", shapeRealm);
+  } else if ($(".category-3d").hasClass("active")) {
+    patternData(url3D, "append", shapeRealm);
+  }
+});
