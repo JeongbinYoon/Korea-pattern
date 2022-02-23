@@ -143,6 +143,7 @@ $(document).on("click", ".item .showDetail", function (event) {
       let abstractTxt = $(data).find("abstractTxt").text();
       const thumbnailTag = `<div class="thumbnailBox"><img class="thumbnail" src="${thumbnail}" alt="${title}"></div>`;
       const patternInfo = `<h5 class="patternInfo">문양정보</h5>`;
+      const viewModelBtn = `<div><button class="viewModelBtn">3D 뷰어</button></div>`;
 
       let el = "<ul class='list'>";
       el += `<li>`;
@@ -167,7 +168,7 @@ $(document).on("click", ".item .showDetail", function (event) {
       el += `</li>`;
       el += `</ul>`;
 
-      $(".patternDetail").html(thumbnailTag + patternInfo + el);
+      $(".patternDetail").html(thumbnailTag + viewModelBtn + patternInfo + el);
 
       // 문양설명 없을 시
       if (!abstractTxt) {

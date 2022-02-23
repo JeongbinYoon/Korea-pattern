@@ -18,7 +18,13 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./main.js" defer></script>
+    <script src="./build/three.js" defer></script>
+    <script
+      src="https://threejs.org/examples/js/controls/OrbitControls.js"
+      defer
+    ></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/pattern3D.js" defer></script>
   </head>
   <body>
     <header id="header">
@@ -54,7 +60,6 @@
         </div>
       </div>
     </header>
-
     <nav id="navi">
       <div class="patterns">
         <div class="pattern active">전체</div>
@@ -89,5 +94,17 @@
     </div>
 
     <button class="scrollUp">UP</button>
+
+    <!-- threejs -->
+    <canvas id="webgl-container"></canvas>
+    <video
+      class="videoBg"
+      autoplay
+      id="videoInput"
+      width="640"
+      height="480"
+    ></video>
+    <button class="changeCameraBtn">전환</button>
+    <button class="closeViewerBtn">X</button>
   </body>
 </html>

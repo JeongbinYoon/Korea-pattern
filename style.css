@@ -280,4 +280,58 @@ html {
     border-radius: 5px 0 0 5px;
     cursor: pointer;
   }
+
+  /* three js */
+  #webgl-container {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .videoBg {
+    display: none;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+  }
+  .changeCameraBtn {
+    display: none;
+    font-size: 32px;
+    padding: 20px 40px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 10;
+    background-color: beige;
+  }
+
+  .viewModelBtn {
+    margin: 0 auto;
+    z-index: 10;
+  }
+
+  .closeViewerBtn {
+    display: none;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 10;
+  }
+
+  .turnOnOff {
+    display: block !important;
+  }
+
+  .turnOffOn {
+    display: none !important;
+  }
 }
