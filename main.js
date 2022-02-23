@@ -116,3 +116,103 @@ $(".moreBtn").on("click", function () {
     patternData(url3D, "append", shapeRealm);
   }
 });
+
+// 문양 클릭
+$(document).on("click", ".item .showDetail", function (event) {
+  let popupDid = $(this).prev().children(".did").text();
+
+  $.ajax({
+    method: "GET",
+    url: `${didUrl}&did=${popupDid}`,
+  })
+    .done(function (data) {
+      console.log(data);
+      console.log(popupDid);
+      $("#itemInfo").css("display", "block");
+
+      // 팝업 시 리스트 숨기기
+      $(".items").css("display", "none");
+
+      const thumbnail = $(data).find("thumbnail").text();
+      const title = $(data).find("title").text();
+      const type = $(data).find("type").text();
+      const dimension = $(data).find("dimension").text();
+      const age = $(data).find("age").text();
+      const location = $(data).find("location").text();
+      const mat = $(data).find("mat").text();
+      let abstractTxt = $(data).find("abstractTxt").text();
+      const thumbnailTag = `<div class="thumbnailBox"><img class="thumbnail" src="${thumbnail}" alt="${title}"></div>`;
+      const patternInfo = `<h5 class="patternInfo">문양정보</h5>`;
+
+      let el = "<ul class='list'>";
+      el += `<li>`;
+      el += `<span class='tit'>문양명칭</span>`;
+      el += `<span class='txt'>${title}</span>`;
+      el += `</li>`;
+      el += `<li>`;
+      el += `<span class='tit'>문양구분</span>`;
+      el += `<span class='txt'>${type}${dimension}</span>`;
+      el += `</li>`;
+      el += `<li>`;
+      el += `<span class='tit'>국적/시대</span>`;
+      el += `<span class='txt'>${age}</span>`;
+      el += `</li>`;
+      el += `<li>`;
+      el += `<span class='tit'>소장기관</span>`;
+      el += `<span class='txt'>${location}</span>`;
+      el += `</li>`;
+      el += `<li>`;
+      el += `<span class='tit'>원천유물 재질</span>`;
+      el += `<span class='txt'>${mat}</span>`;
+      el += `</li>`;
+      el += `</ul>`;
+
+      $(".patternDetail").html(thumbnailTag + patternInfo + el);
+
+      // 문양설명 없을 시
+      if (!abstractTxt) {
+        abstractTxt = "없음";
+      }
+      $(".discription").text(abstractTxt);
+
+      // 문양 확대
+      $(".thumbnailBox").on("click", function (e) {
+        $(this).addClass("active");
+      });
+      $("html").on("click", function (e) {
+        if (
+          !$(e.target).hasClass("active") &&
+          !$(e.target).hasClass("thumbnail")
+        ) {
+          $(".thumbnailBox").removeClass("active");
+        }
+      });
+
+      // 뒤로가기 버튼
+      $(".backBtn").on("click", function () {
+        $("#itemInfo").css("display", "none");
+        $(".items").css("display", "block");
+      });
+    })
+    .fail(function () {
+      alert("ajax 연결 실패");
+    });
+});
+
+// 스크롤
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 200) {
+    $(".scrollUp").fadeIn();
+  } else {
+    $(".scrollUp").fadeOut();
+  }
+});
+
+$(".scrollUp").on("click", function () {
+  $("html").animate(
+    {
+      scrollTop: 0,
+    },
+    400
+  );
+});
