@@ -34,7 +34,7 @@
 <br/>
 
 > ### 결과물
-<img src="https://user-images.githubusercontent.com/86540140/206977050-e3964e1f-26fb-464d-b289-22e4b79f4772.png" width="300"> <img src="https://user-images.githubusercontent.com/86540140/206977048-35c76ebf-1ece-4141-8169-a1ee9befcffc.png" width="300"> <img src="https://user-images.githubusercontent.com/86540140/206977046-16f54e97-f624-4534-ac18-684c83b6914a.png" width="300">
+<img src="https://user-images.githubusercontent.com/86540140/206977050-e3964e1f-26fb-464d-b289-22e4b79f4772.png" width="250"> <img src="https://user-images.githubusercontent.com/86540140/206977048-35c76ebf-1ece-4141-8169-a1ee9befcffc.png" width="250"> <img src="https://user-images.githubusercontent.com/86540140/206977046-16f54e97-f624-4534-ac18-684c83b6914a.png" width="250">
 
 
 ***
@@ -51,9 +51,9 @@
 
 > ### 결과물
 형태 카테고리 클릭시 요청 API에 파라미터를 넘겨주어 새롭게 데이터를 받아온다.<br/><br/>
-<img src="https://user-images.githubusercontent.com/86540140/206973161-928516ea-d2d9-46f7-841f-e28b91270e01.png" width="300">
-<img src="https://user-images.githubusercontent.com/86540140/206973221-31e1fa49-5906-4602-b2b4-81d66116870c.png" width="300">
-<img src="https://user-images.githubusercontent.com/86540140/206973231-b3d21e32-28b7-4e81-bb05-786ee3c4008e.png" width="300">
+<img src="https://user-images.githubusercontent.com/86540140/206973161-928516ea-d2d9-46f7-841f-e28b91270e01.png" width="250">
+<img src="https://user-images.githubusercontent.com/86540140/206973221-31e1fa49-5906-4602-b2b4-81d66116870c.png" width="250">
+<img src="https://user-images.githubusercontent.com/86540140/206973231-b3d21e32-28b7-4e81-bb05-786ee3c4008e.png" width="250">
 
 ***
 
